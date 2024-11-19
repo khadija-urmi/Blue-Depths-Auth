@@ -1,0 +1,264 @@
+[
+    {
+        "id": 1,
+        "adventureTitle": "Coral Reef Exploration",
+        "image": "https://source.unsplash.com/1600x900/?coral,reef",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Dive into the vibrant coral reefs and explore marine life.",
+        "adventureCost": 200,
+        "bookingAvailability": true,
+        "location": "Great Barrier Reef, Australia",
+        "duration": "5 hours",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Scuba Gear",
+            "Expert Guide",
+            "Safety Equipment",
+            "Snacks"
+        ],
+        "ecoFriendlyFeatures": [
+            "No-touch diving policy",
+            "Reef-safe sunscreen required"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "Bring your own towel",
+            "No plastic bottles allowed",
+            "Arrive 30 minutes early"
+        ]
+    },
+    {
+        "id": 2,
+        "adventureTitle": "Shipwreck Dive Adventure",
+        "image": "https://source.unsplash.com/1600x900/?shipwreck,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Explore ancient shipwrecks teeming with marine life.",
+        "adventureCost": 250,
+        "bookingAvailability": true,
+        "location": "Truk Lagoon, Micronesia",
+        "duration": "6 hours",
+        "adventureLevel": "Advanced",
+        "includedItems": [
+            "Scuba Gear",
+            "Underwater Torch",
+            "Professional Instructor"
+        ],
+        "ecoFriendlyFeatures": [
+            "Leave-no-trace diving",
+            "Non-invasive exploration"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Certified divers only",
+            "No littering in the ocean"
+        ]
+    },
+    {
+        "id": 3,
+        "adventureTitle": "Underwater Photography Dive",
+        "image": "https://source.unsplash.com/1600x900/?underwater,photography",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Capture the beauty of marine ecosystems through your lens.",
+        "adventureCost": 300,
+        "bookingAvailability": false,
+        "location": "Palawan, Philippines",
+        "duration": "4 hours",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Photography Guidance",
+            "Scuba Gear",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Eco-certified photography gear",
+            "No disturbing marine habitats"
+        ],
+        "maxGroupSize": 5,
+        "specialInstructions": [
+            "Bring your own camera",
+            "Avoid bright flashes underwater"
+        ]
+    },
+    {
+        "id": 4,
+        "adventureTitle": "Night Ocean Dive",
+        "image": "https://source.unsplash.com/1600x900/?night,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Experience the thrill of diving at night with glowing marine life.",
+        "adventureCost": 180,
+        "bookingAvailability": true,
+        "location": "Koh Tao, Thailand",
+        "duration": "3 hours",
+        "adventureLevel": "Advanced",
+        "includedItems": [
+            "Night Dive Flashlights",
+            "Expert Guide",
+            "Safety Gear"
+        ],
+        "ecoFriendlyFeatures": [
+            "No over-fishing zones",
+            "Glowing coral preservation"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Avoid loud noises",
+            "Wear dark clothing"
+        ]
+    },
+    {
+        "id": 5,
+        "adventureTitle": "Turtle Sanctuary Dive",
+        "image": "https://source.unsplash.com/1600x900/?turtle,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Swim alongside sea turtles in a protected sanctuary.",
+        "adventureCost": 220,
+        "bookingAvailability": true,
+        "location": "Gili Islands, Indonesia",
+        "duration": "5 hours",
+        "adventureLevel": "Beginner",
+        "includedItems": [
+            "Scuba Gear",
+            "Safety Equipment",
+            "Turtle Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Turtle-safe zones",
+            "Plastic-free dive policies"
+        ],
+        "maxGroupSize": 12,
+        "specialInstructions": [
+            "No feeding the turtles",
+            "Stay at least 3 meters away"
+        ]
+    },
+    {
+        "id": 6,
+        "adventureTitle": "Shark Encounter Dive",
+        "image": "https://source.unsplash.com/1600x900/?shark,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "An exhilarating experience of swimming with sharks.",
+        "adventureCost": 350,
+        "bookingAvailability": false,
+        "location": "Bahamas",
+        "duration": "4 hours",
+        "adventureLevel": "Expert",
+        "includedItems": [
+            "Safety Cage",
+            "Scuba Gear",
+            "Professional Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Shark conservation program",
+            "No feeding policies"
+        ],
+        "maxGroupSize": 4,
+        "specialInstructions": [
+            "Stay calm",
+            "Follow guide instructions carefully"
+        ]
+    },
+    {
+        "id": 7,
+        "adventureTitle": "Kelp Forest Exploration",
+        "image": "https://source.unsplash.com/1600x900/?kelp,forest",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Discover the underwater forests of kelp and its wildlife.",
+        "adventureCost": 150,
+        "bookingAvailability": true,
+        "location": "Monterey Bay, California",
+        "duration": "3 hours",
+        "adventureLevel": "Beginner",
+        "includedItems": [
+            "Scuba Gear",
+            "Snorkel",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Kelp protection policies",
+            "Eco-tour certified"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Stay close to the group",
+            "No damaging the kelp"
+        ]
+    },
+    {
+        "id": 8,
+        "adventureTitle": "Dolphin Swim and Dive",
+        "image": "https://source.unsplash.com/1600x900/?dolphin,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Enjoy a close encounter with friendly dolphins.",
+        "adventureCost": 250,
+        "bookingAvailability": true,
+        "location": "Hawaii, USA",
+        "duration": "5 hours",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Guide",
+            "Safety Gear",
+            "Underwater Audio System"
+        ],
+        "ecoFriendlyFeatures": [
+            "Marine animal safety practices",
+            "No touching dolphins"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "No loud noises",
+            "Respect dolphin space"
+        ]
+    },
+    {
+        "id": 9,
+        "adventureTitle": "Deep Blue Dive",
+        "image": "https://source.unsplash.com/1600x900/?deep,ocean",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Explore the deep blue ocean with an experienced guide.",
+        "adventureCost": 400,
+        "bookingAvailability": false,
+        "location": "Maldives",
+        "duration": "6 hours",
+        "adventureLevel": "Expert",
+        "includedItems": [
+            "High-Tech Gear",
+            "Safety Guide",
+            "Snacks"
+        ],
+        "ecoFriendlyFeatures": [
+            "Eco-gear",
+            "Leave-no-trace policy"
+        ],
+        "maxGroupSize": 6,
+        "specialInstructions": [
+            "Health check required",
+            "Certified divers only"
+        ]
+    },
+    {
+        "id": 10,
+        "adventureTitle": "Whale Watching Dive",
+        "image": "https://source.unsplash.com/1600x900/?whale,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Experience the majestic sight of whales in their natural habitat.",
+        "adventureCost": 300,
+        "bookingAvailability": true,
+        "location": "Sri Lanka",
+        "duration": "4 hours",
+        "adventureLevel": "Intermediate",
+        "includedItems": [
+            "Safety Gear",
+            "Boat Ride",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Whale-safe zones",
+            "No boats near feeding areas"
+        ],
+        "maxGroupSize": 10,
+        "specialInstructions": [
+            "No sudden movements",
+            "Stay on designated paths"
+        ]
+    }
+]
