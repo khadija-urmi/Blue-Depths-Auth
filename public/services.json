@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "icon": "🧭",
+        "title": "Adventure Planning",
+        "description": "Plan your next adventure with our expert guidance and tools."
+    },
+    {
+        "id": 2,
+        "icon": "🌐",
+        "title": "Eco-Friendly Coastal Tours",
+        "description": "Discover sustainable ways to explore coastal destinations while preserving their beauty."
+    },
+    {
+        "id": 3,
+        "icon": "🦈",
+        "title": "Marine Wildlife Tours",
+        "description": "Observe dolphins, sea turtles, and even sharks on our eco-friendly marine tours."
+    },
+    {
+        "id": 4,
+        "icon": "🏕️",
+        "title": "Camping Packages",
+        "description": "Get access to exclusive camping packages for an unforgettable experience."
+    },
+    {
+        "id": 5,
+        "icon": "🌅",
+        "title": "Sunset Cruises",
+        "description": "Relax and unwind with a peaceful cruise as you watch the sun dip below the horizon."
+    },
+    {
+        "id": 6,
+        "icon": "🚤",
+        "title": "Boat Rentals",
+        "description": "Rent top-notch boats for a day of fun on the water with friends and family."
+    }
+]

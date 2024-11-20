@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
 
-const HomeLayout = () => {
+const MainLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
@@ -13,4 +13,4 @@ const HomeLayout = () => {
     );
 };
 
-export default HomeLayout;
+export default MainLayout;

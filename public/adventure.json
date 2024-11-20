@@ -260,5 +260,57 @@
             "No sudden movements",
             "Stay on designated paths"
         ]
+    },
+    {
+        "id": 11,
+        "adventureTitle": "Kelp Forest Exploration",
+        "image": "https://source.unsplash.com/1600x900/?kelp,forest",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "Discover the underwater forests of kelp and its wildlife.",
+        "adventureCost": 150,
+        "bookingAvailability": true,
+        "location": "Monterey Bay, California",
+        "duration": "3 hours",
+        "adventureLevel": "Beginner",
+        "includedItems": [
+            "Scuba Gear",
+            "Snorkel",
+            "Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Kelp protection policies",
+            "Eco-tour certified"
+        ],
+        "maxGroupSize": 8,
+        "specialInstructions": [
+            "Stay close to the group",
+            "No damaging the kelp"
+        ]
+    },
+    {
+        "id": 12,
+        "adventureTitle": "Shark Encounter Dive",
+        "image": "https://source.unsplash.com/1600x900/?shark,diving",
+        "categoryName": "Ocean Dive",
+        "shortDescription": "An exhilarating experience of swimming with sharks.",
+        "adventureCost": 350,
+        "bookingAvailability": false,
+        "location": "Bahamas",
+        "duration": "4 hours",
+        "adventureLevel": "Expert",
+        "includedItems": [
+            "Safety Cage",
+            "Scuba Gear",
+            "Professional Guide"
+        ],
+        "ecoFriendlyFeatures": [
+            "Shark conservation program",
+            "No feeding policies"
+        ],
+        "maxGroupSize": 4,
+        "specialInstructions": [
+            "Stay calm",
+            "Follow guide instructions carefully"
+        ]
     }
 ]

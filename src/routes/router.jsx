@@ -1,16 +1,20 @@
 import { createBrowserRouter } from 'react-router-dom';
-import HomeLayout from '../layouts/HomeLayout';
+import MainLayout from '../layouts/MainLayout';
 import LogIn from '../pages/LogIn/LogIn';
 import Register from '../pages/Register/Register';
 import Home from '../pages/Home/Home';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
+
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomeLayout></HomeLayout>,
+        element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage />,
         children: [{
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: async () => await fetch('/adventure.json')
         },
         {
             path: "adventures",
@@ -19,14 +23,16 @@ const router = createBrowserRouter([
         {
             path: "profile",
             element: <h2>This profile</h2>
+        }
+            ,
+        {
+            path: "/login",
+            element: <LogIn></LogIn>,
+        },
+        {
+            path: "/register",
+            element: <Register></Register>,
         }],
-    },
-    {
-        path: "/login",
-        element: <LogIn></LogIn>,
-    }, {
-        path: "/register",
-        element: <Register></Register>,
     }
 ]);
 

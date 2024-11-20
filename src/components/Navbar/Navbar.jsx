@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-import ImgLogo from '../assets/fish.png';
+import ImgLogo from '../../assets/fish.png';
 
 const Navbar = () => {
 
@@ -25,7 +25,7 @@ const Navbar = () => {
                         <img src={ImgLogo} className="w-14 h-14"></img>
                         <Link to='/' className="btn btn-ghost text-2xl text-white font-semibold">BlueDepths</Link></div>
                 </div>
-                <div className="navbar-center hidden lg:flex menu menu-horizontal text-lg px-1 gap-4">
+                <div className="navbar-center hidden lg:flex menu menu-horizontal text-lg text-white px-1 gap-4">
 
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/adventures">All Adventures</NavLink>
