@@ -17,21 +17,21 @@ const router = createBrowserRouter([
             loader: async () => await fetch('/adventure.json')
         },
         {
-            path: "adventures",
-            element: <h2>This adventures</h2>
-        },
-        {
-            path: "profile",
-            element: <h2>This profile</h2>
-        }
-            ,
-        {
             path: "/login",
             element: <LogIn></LogIn>,
         },
         {
             path: "/register",
             element: <Register></Register>,
+        },
+        {
+            path: "adventures",
+            element: <h2>This adventures</h2>
+        }
+            ,
+        {
+            path: "profile",
+            element: <h2>This profile</h2>
         }],
     }
 ]);

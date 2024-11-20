@@ -3,6 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import AllAdventures from '../../components/AllAdventures/AllAdventures';
 import Banner from '../../components/Banner/Banner';
 import OurServices from '../../components/OurService/OurService';
+import ContactUs from '../../components/ContactUs/ContactUs';
+
 
 const Home = () => {
     const adventuresData = useLoaderData() || [];
@@ -14,6 +16,7 @@ const Home = () => {
                 <AllAdventures data={adventuresData}></AllAdventures>
             </section>
             <OurServices></OurServices>
+            <ContactUs></ContactUs>
         </div>
     );
 };
