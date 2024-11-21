@@ -18,19 +18,23 @@ const router = createBrowserRouter([
         children: [{
             path: "/",
             element: <Home></Home>,
+            meta: { title: "Home " },
             loader: async () => await fetch('/adventure.json')
         },
         {
             path: "/login",
             element: <LogIn></LogIn>,
+            meta: { title: "Log In - Adventure Hub" },
         },
         {
             path: "/register",
             element: <Register></Register>,
+            meta: { title: "Register" },
         },
         {
             path: "/adventures",
             element: <AllAdventures></AllAdventures>,
+            meta: { title: "All Adventures " },
             loader: async () => await fetch('/adventure.json')
         }
             ,
@@ -39,6 +43,7 @@ const router = createBrowserRouter([
             element: <PrivateRoute>
                 <AdventureDetail></AdventureDetail>
             </PrivateRoute>,
+            meta: { title: "Adventure Detail" },
             loader: async ({ params }) => {
                 const res = await fetch("/adventure.json")
                 const allData = await res.json()
@@ -50,13 +55,15 @@ const router = createBrowserRouter([
             path: "profile",
             element: <PrivateRoute>
                 <Profile></Profile>
-            </PrivateRoute>
+            </PrivateRoute>,
+            meta: { title: "My Profile" },
         },
         {
             path: "/update-profile",
             element: <PrivateRoute>
                 <UpdateProfile></UpdateProfile>
-            </PrivateRoute>
+            </PrivateRoute>,
+            meta: { title: "Update Profile" },
         }],
     }
 ]);
