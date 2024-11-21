@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Img1 from "../../assets/relogo.png"
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-    const { createNewUser, setUser } = useContext(AuthContext);
-
+    const { createNewUser, setUser, SignUpWithGoogle } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -18,12 +19,26 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
+                navigate(location ? "/profile" : "/");
+                console.log(" Sign-In Successful:", user);
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 console.log(errorMessage)
             });
     }
+    const handleSignUpGoogle = () => {
+        SignUpWithGoogle()
+            .then((user) => {
+                setUser(user);
+                navigate(location ? "/profile" : "/");
+                console.log(" Sign-In Successful:", user);
+            })
+            .catch((error) => {
+                console.error("Google Sign-In Error:", error.message);
+            });
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -153,7 +168,7 @@ const Register = () => {
                         <span className="px-4 text-gray-500 text-sm">OR</span>
                         <div className="flex-grow h-px bg-gray-300"></div>
                     </div>
-                    <button
+                    <button onClick={handleSignUpGoogle}
                         type="button"
                         className="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300"
                     >

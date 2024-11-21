@@ -7,6 +7,7 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import AllAdventures from '../pages/AllAdventures/AllAdventures';
 import AdventureDetail from '../pages/AdventureDetail/AdventureDetail';
 import PrivateRoute from './PrivateRoute';
+import Profile from '../pages/Profile/Profile';
 
 const router = createBrowserRouter([
     {
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
         },
         {
             path: "profile",
-            element: <h2>This profile</h2>
+            element: <PrivateRoute>
+                <Profile></Profile>
+            </PrivateRoute>
         }],
     }
 ]);
