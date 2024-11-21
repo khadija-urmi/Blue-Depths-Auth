@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-
+import moment from "moment";
+import { useState } from "react";
 const AdventureDetail = () => {
     const adventure = useLoaderData();
-
+    const [showModal, setShowModal] = useState(false);
     const {
         adventureTitle,
         image,
@@ -18,6 +19,19 @@ const AdventureDetail = () => {
         maxGroupSize,
         specialInstructions,
     } = adventure;
+    const handleTalkWithExpert = () => {
+        const currentTime = moment();
+        const startTime = moment("10:00 AM", "hh:mm A");
+        const endTime = moment("8:00 PM", "hh:mm A");
+        if (currentTime.isBetween(startTime, endTime)) {
+            window.open("https://meet.google.com/", "_blank");
+        } else {
+            setShowModal(true);
+        }
+    }
+    const closeModal = () => {
+        setShowModal(false);
+    };
 
     return (
         <div className="card  flex flex-col items-start p-8 bg-white rounded-lg shadow-lg border border-gray-200 w-full max-w-5xl mx-auto">
@@ -81,8 +95,37 @@ const AdventureDetail = () => {
                 <button className="px-6 py-3 bg-blue-500 text-white rounded-lg mt-4 hover:bg-blue-600">
                     Book Now
                 </button>
+                <button
+                    onClick={handleTalkWithExpert}
+                    className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600"
+                >
+                    Talk with Expert
+                </button>
             </div>
+            {
+                showModal && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="bg-white rounded-lg p-6 max-w-sm w-full">
+                            <h3 className="text-lg font-bold text-gray-800 mb-4">
+                                Consultation Time
+                            </h3>
+                            <p className="text-gray-600">
+                                Our experts are available between 10:00 AM and 8:00 PM. Please try again during this time.
+                            </p>
+                            <div className="mt-4 text-right">
+                                <button
+                                    onClick={closeModal}
+                                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
         </div>
+
     );
 };
 
