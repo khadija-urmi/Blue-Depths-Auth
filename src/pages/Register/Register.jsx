@@ -19,7 +19,7 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                navigate(location ? "/profile" : "/");
+                navigate(location.state?.from?.pathname || "/profile");
                 console.log(" Sign-In Successful:", user);
             })
             .catch((error) => {
@@ -31,7 +31,7 @@ const Register = () => {
         SignUpWithGoogle()
             .then((user) => {
                 setUser(user);
-                navigate(location ? "/profile" : "/");
+                navigate(location.state?.from?.pathname || "/profile");
                 console.log(" Sign-In Successful:", user);
             })
             .catch((error) => {
