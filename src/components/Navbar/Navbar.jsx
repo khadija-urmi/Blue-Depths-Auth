@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ImgLogo from '../../assets/fish.png';
+import { AuthContext } from "../../provider/AuthProvider";
+import { useContext } from "react";
+
 
 const Navbar = () => {
-
+    const { user, logOut } = useContext(AuthContext);
     return (
         <div className=" bg-sky-300">
             <div className=" w-11/12 mx-auto navbar">
@@ -25,15 +28,24 @@ const Navbar = () => {
                         <img src={ImgLogo} className="w-14 h-14"></img>
                         <Link to='/' className="btn btn-ghost text-2xl text-white font-semibold">BlueDepths</Link></div>
                 </div>
-                <div className="navbar-center hidden lg:flex menu menu-horizontal text-lg text-white px-1 gap-4">
+                <div className="navbar-center hidden lg:flex menu menu-horizontal text-lg px-1 gap-4">
 
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/adventures">All Adventures</NavLink>
                     <NavLink to="/profile">Profile</NavLink>
                 </div>
                 <div className="navbar-end ">
-                    <NavLink className="px-6 py-3 text-sky-500
-                     bg-white btn rounded-lg " to="/login">Log In</NavLink></div>
+                    {user && user?.email ? (
+                        <button onClick={logOut} className="btn  px-6 py-3 text-sky-500
+                     bg-white rounded-lg ">
+                            Log-Out
+                        </button>
+                    ) :
+                        (
+                            <NavLink className="px-6 py-3 text-sky-500
+                     bg-white btn rounded-lg " to="/login">Log In</NavLink>
+                        )}
+                </div>
             </div>
         </div>
     );
