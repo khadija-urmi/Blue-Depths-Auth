@@ -4,19 +4,29 @@ import AllAdventures from '../../components/AllAdventures/AllAdventures';
 import Banner from '../../components/Banner/Banner';
 import OurServices from '../../components/OurService/OurService';
 import ContactUs from '../../components/ContactUs/ContactUs';
-
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Home = () => {
     const adventuresData = useLoaderData() || [];
-
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    }, []);
     return (
-        <div>
+        <div data-aos="fade-up">
             <Banner></Banner>
-            <section className='w-11/12 mx-auto mt-10'>
+            <section className='w-11/12 mx-auto mt-10' data-aos="slide-up">
                 <AllAdventures data={adventuresData}></AllAdventures>
             </section>
-            <OurServices></OurServices>
-            <ContactUs></ContactUs>
+            <div>
+                <OurServices></OurServices>
+            </div>
+            <div>
+                <ContactUs></ContactUs>
+            </div>
         </div>
     );
 };
