@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const authInfo = {
-        user, setUser, createNewUser, logOut, SignInUser, loading, SignUpWithGoogle
+        user, setUser, createNewUser, logOut, SignInUser, loading, SignUpWithGoogle,
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
