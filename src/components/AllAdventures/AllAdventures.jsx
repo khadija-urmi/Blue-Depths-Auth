@@ -24,7 +24,7 @@ const AllAdventures = ({ data }) => {
                                 <li key={index} className='list-disc text-left ml-5'> {feature}</li>
                             ))}
                         </ul>
-                        <Link className="btn mt-4 px-4 py-2 bg-sky-400 text-white rounded hover:bg-sky-600">
+                        <Link to={`/adventures/${adventure.id}`} className="btn mt-4 px-4 py-2 bg-sky-400 text-white rounded hover:bg-sky-600">
                             Explore Now
                         </Link>
                     </div>

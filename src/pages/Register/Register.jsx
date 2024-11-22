@@ -62,18 +62,6 @@ const Register = () => {
             });
     };
 
-    const handleSignUpGoogle = () => {
-        SignUpWithGoogle()
-            .then((result) => {
-                const user = result.user;
-                setUser(user);
-                navigate("/");
-                console.log("Google Sign-In Successful:", user);
-            })
-            .catch((error) => {
-                console.error("Google Sign-In Error:", error.message);
-            });
-    };
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -164,23 +152,6 @@ const Register = () => {
                             </button>
                         </div>
                     </form>
-                    <div className="flex items-center my-6">
-                        <div className="flex-grow h-px bg-gray-300"></div>
-                        <span className="px-4 text-gray-500 text-sm">OR</span>
-                        <div className="flex-grow h-px bg-gray-300"></div>
-                    </div>
-                    <button
-                        onClick={handleSignUpGoogle}
-                        type="button"
-                        className="w-full flex items-center justify-center bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-sm hover:bg-gray-100"
-                    >
-                        <img
-                            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-                            alt="Google Logo"
-                            className="w-5 h-5 mr-2"
-                        />
-                        Sign up with Google
-                    </button>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const LogIn = () => {
-    const { setUser, SignInUser } = useContext(AuthContext);
+    const { setUser, SignInUser, SignUpWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,8 +24,17 @@ const LogIn = () => {
             });
     }
     const handleSignUpGoogle = () => {
+        SignUpWithGoogle()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                navigate(location?.state ? location.state : "/");
 
-    }
+            })
+            .catch((error) => {
+                setError("Google Sign-In Error:", error.message);
+            });
+    };
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
