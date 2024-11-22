@@ -21,7 +21,7 @@ const Home = () => {
             <section className='w-11/12 mx-auto mt-10' data-aos="slide-up">
                 <AllAdventures data={adventuresData}></AllAdventures>
             </section>
-            <div>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <OurServices></OurServices>
             </div>
             <div>
