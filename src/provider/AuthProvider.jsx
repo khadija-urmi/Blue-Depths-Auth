@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
     const updateUserProfile = (updateData) => {
-        console.log("updateUserProfile called with:", updateData);
+
         return updateProfile(auth.currentUser, updateData);
     }
     const forgetPassword = (email) => {

@@ -7,7 +7,6 @@ import userImg from "../../assets/user.png";
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
-    console.log(user)
     const navigate = useNavigate();
     const handleUpdateProfile = () => {
         navigate("/update-profile");

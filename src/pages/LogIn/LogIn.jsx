@@ -39,7 +39,6 @@ const LogIn = () => {
     };
     const handleForgetPassword = () => {
         const email = emailRef.current.value;
-        console.log(email);
         if (!email) {
             alert("Please enter your email to reset your password.");
             return;

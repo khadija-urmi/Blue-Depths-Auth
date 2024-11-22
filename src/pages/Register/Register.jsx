@@ -7,7 +7,6 @@ const Register = () => {
     const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
 
     const navigate = useNavigate();
-
     const [error, setError] = useState("");
 
     const validatePassword = (password) => {
@@ -51,7 +50,6 @@ const Register = () => {
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         navigate("/");
-                        console.log(user);
                     })
                     .catch((error) => {
                         setError(error.message);
