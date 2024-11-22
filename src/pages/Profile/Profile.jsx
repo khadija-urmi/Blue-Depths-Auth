@@ -7,6 +7,7 @@ import userImg from "../../assets/user.png";
 
 const Profile = () => {
     const { user } = useContext(AuthContext);
+    console.log(user)
     const navigate = useNavigate();
     const handleUpdateProfile = () => {
         navigate("/update-profile");
@@ -17,15 +18,16 @@ const Profile = () => {
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold text-gray-800 mb-6">
-                Welcome, {user.name}!
+                Welcome, {user.displayName}!
             </h1>
             <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
                 <div className="flex flex-col items-center">
                     <img
-                        src={user.photo || userImg}
+                        src={user.photoURL || userImg}
                         alt="User Avatar"
-                        className="w-24 h-24 rounded-full mb-4"
-                    /> <h2 className="text-2xl font-semibold text-gray-800 mb-2">{user.name}</h2>
+                        className="w-32 h-32 rounded-md mb-4"
+                    /> <h2 className="text-2xl font-semibold text-gray-800 mb-2">{user.
+                        displayName}</h2>
                     <p className="text-gray-600">{user.email}</p>
                 </div>
             </div>
