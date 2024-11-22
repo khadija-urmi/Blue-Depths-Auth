@@ -48,6 +48,12 @@ const router = createBrowserRouter([
                 const res = await fetch("/adventure.json")
                 const allData = await res.json()
                 const singleData = allData.find(data => data.id == params.id)
+                if (singleData) {
+                    document.title = `Adventure: ${singleData.name || 'Details'}`; // Assume the data object has a "name" field
+                } else {
+                    document.title = "Adventure Not Found";
+                }
+
                 return singleData;
             }
         },

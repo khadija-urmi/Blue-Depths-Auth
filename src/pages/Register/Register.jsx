@@ -4,7 +4,7 @@ import Img1 from "../../assets/relogo.png";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-    const { createNewUser, setUser, SignUpWithGoogle, updateUserProfile } = useContext(AuthContext);
+    const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
