@@ -67,5 +67,5 @@ The following npm packages were used in this project:
 - **Backend**: Firebase Authentication
 - **Tools**: NPM, React Router
 
-
+  
 **Enjoy exploring adventures journey !**
