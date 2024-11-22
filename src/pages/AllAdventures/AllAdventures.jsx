@@ -2,7 +2,7 @@
 import { Link, useLoaderData } from 'react-router-dom';
 const AllAdventures = () => {
     const adventuresData = useLoaderData() || [];
-    console.log(adventuresData)
+
     return (
         <div className="w-11/12 mx-auto mt-10 text-center">
             <h2 className="text-4xl font-bold mb-4">Explore Endless Possibilities</h2>

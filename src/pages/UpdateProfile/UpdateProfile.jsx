@@ -1,40 +1,25 @@
 import { useContext, useState } from "react";
-import { getAuth, updateProfile } from "firebase/auth";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const UpdateProfile = () => {
-    const { user, setUser } = useContext(AuthContext);
-    const [name, setName] = useState(user.name);
-    const [photo, setPhoto] = useState(user.photo);
+    const { updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
-    const auth = getAuth();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!auth.currentUser) {
-            setError("No authenticated user.");
-            return;
-        }
-        updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: photo,
-        })
+
+        updateUserProfile({ displayName: name, photoURL: photo })
             .then(() => {
-                setUser({
-                    ...auth.currentUser,
-                    displayName: name,
-                    photoURL: photo,
-                })
-                console.log(user);
                 setSuccess("Profile updated successfully!");
                 setError("");
             })
-            .catch((err) => {
-                console.error("Error updating profile:", err.message);
-                setError(err.message);
+            .catch((error) => {
+                setError(error.message);
                 setSuccess("");
             });
+
     };
 
     return (

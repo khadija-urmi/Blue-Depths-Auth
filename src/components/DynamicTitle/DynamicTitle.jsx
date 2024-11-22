@@ -8,7 +8,6 @@ const DynamicTitle = () => {
     useEffect(() => {
         const routes = matchRoutes(router.routes, location.pathname);
         const currentRoute = routes?.[0]?.route;
-        console.log(currentRoute);
         if (currentRoute?.meta?.title) {
             document.title = currentRoute.meta.title;
         } else {

@@ -4,7 +4,7 @@ import Img1 from "../../assets/relogo.png";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-    const { createNewUser, setUser, SignUpWithGoogle } = useContext(AuthContext);
+    const { createNewUser, setUser, SignUpWithGoogle, updateUserProfile } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -31,10 +31,10 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
-
+        const name = form.get("name");
         const email = form.get("email");
         const password = form.get("password");
-
+        const photo = form.get("photo");
 
         const passwordError = validatePassword(password);
         if (passwordError) {
@@ -48,11 +48,15 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                navigate(location.state?.from?.pathname || "/");
-                console.log("Sign-Up Successful:", user);
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate(location.state?.from?.pathname || "/");
+                    })
+                    .catch((error) => {
+                        setError(error.message);
+                    });
             })
             .catch((error) => {
-                console.error("Sign-Up Error:", error.message);
                 setError(error.message);
             });
     };

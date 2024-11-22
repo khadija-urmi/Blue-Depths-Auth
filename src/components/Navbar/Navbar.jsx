@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import ImgLogo from '../../assets/fish.png';
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext } from "react";
-
+import userImg from "../../assets/user.png";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -34,17 +34,22 @@ const Navbar = () => {
                     <NavLink to="/adventures">All Adventures</NavLink>
                     <NavLink to="/profile">Profile</NavLink>
                 </div>
-                <div className="navbar-end ">
-                    {user && user?.email ? (
-                        <button onClick={logOut} className="btn  px-6 py-3 text-sky-500
-                     bg-white rounded-lg ">
-                            Log-Out
-                        </button>
-                    ) :
-                        (
-                            <NavLink className="px-6 py-3 text-sky-500
-                     bg-white btn rounded-lg " to="/login">Log In</NavLink>
-                        )}
+                <div className="navbar-end bg-white flex items-center gap-4 rounded-l-md shadow-sm max-w-fit ml-auto h-16 px-2">
+                    {user && user?.email ? (<div className="flex justify-center  gap-2 items-center" >
+                        <img className="w-10 h-10 rounded-full" src={user?.photoURL} />
+                        <p className="text-blue-500 font-semibold text-lg">{user.displayName}</p>
+                    </div>) : (<img className="w-10 h-10 rounded-md" src={userImg} />)}
+                    <div className="flex-1 h-full">
+                        {user && user?.email ? (
+                            <button onClick={logOut} className=" w-full h-full text-white bg-blue-500 rounded-r-lg flex items-center justify-center  px-4 py-2 ml-3 box-border">
+
+                                Log-Out
+                            </button>
+                        ) :
+                            (
+                                <NavLink className=" w-full h-full text-white bg-blue-500 rounded-r-lg flex items-center justify-center  px-4 py-2 ml-3 box-border" to="/login">Log In</NavLink>
+                            )}
+                    </div>
                 </div>
             </div>
         </div>
