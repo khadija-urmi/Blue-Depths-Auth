@@ -1,16 +1,17 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const LogIn = () => {
-    const { setUser, SignInUser, SignUpWithGoogle } = useContext(AuthContext);
+    const { setUser, SignInUser,
+        SignUpWithGoogle, forgetPassword } = useContext(AuthContext);
+    const emailRef = useRef();
     const [error, setError] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
-
         const email = form.get("email");
         const password = form.get("password");
         SignInUser(email, password)
@@ -22,6 +23,7 @@ const LogIn = () => {
             .catch((er) => {
                 setError({ ...error, login: er.code });
             });
+
     }
     const handleSignUpGoogle = () => {
         SignUpWithGoogle()
@@ -35,6 +37,23 @@ const LogIn = () => {
                 setError("Google Sign-In Error:", error.message);
             });
     };
+    const handleForgetPassword = () => {
+        const email = emailRef.current.value;
+        console.log(email);
+        if (!email) {
+            alert("Please enter your email to reset your password.");
+            return;
+        }
+
+        forgetPassword(email)
+            .then(() => {
+                alert("Password reset email sent! Please check your inbox.");
+            })
+            .catch((error) => {
+                console.error("Error:", error.message);
+                alert(error.message);
+            });
+    }
     return (
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
             <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
@@ -48,7 +67,7 @@ const LogIn = () => {
                         <input
                             name="email"
                             type="email"
-                            id="email"
+                            id="email" ref={emailRef}
                             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
                             placeholder="Enter your email"
                             required
@@ -80,7 +99,7 @@ const LogIn = () => {
                     )}
 
                     <div className="text-center mt-4 text-gray-600">
-                        <a href="#forgot-password" className="text-blue-500 hover:underline">Forgot Password?</a>
+                        <button onClick={handleForgetPassword} className="btn text-blue-500 hover:underline">Forgot Password?</button>
                         <span className="mx-2">|</span>
                         <Link to="/register" className="text-blue-500 hover:underline">Sign Up</Link>
                     </div>
