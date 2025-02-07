@@ -5,7 +5,7 @@ A modern web application designed to help users explore, book, and manage advent
 
 
 ## 🚀 Live Demo
-Check out the live version of the app [here](http://localhost:5173/).
+Check out the live version of the app [here](https://blue-depths-auth.web.app/).
 
 
 ## 🎯 Purpose
